@@ -1,8 +1,11 @@
 {
-    "autoload" : {
+    "autoload": {
         "psr-4": {
-            "patterns" : "Patterns"
+            "Patterns\\": "patterns/"
         }
+    },
+    "autoload-dev": {
+        "Test\\": "tests/"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0"

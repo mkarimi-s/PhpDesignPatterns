@@ -11,6 +11,8 @@ class Singleton
         if(self::$instance === null) {
             self::$instance = new static();
         }
+
+        return self::$instance;
     }
 
     private function __construct()
