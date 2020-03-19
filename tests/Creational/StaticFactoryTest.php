@@ -12,17 +12,27 @@ use Exception;
 
 class StaticFactoryTest extends TestCase
 {
-    public function testCanCreateNumberFormatter()
+    /**
+     * @param string $type
+     * @throws Exception
+     * @dataProvider provideType
+     */
+    public function testCanCreateStringOrNumberFormatter(string $type)
     {
-        $this->assertInstanceOf(FormatNumber::class, StaticFactory::factory('number'));
+        $class = $type === 'string' ? FormatString::class : FormatNumber::class;
+        $this->assertInstanceOf($class, StaticFactory::factory($type));
     }
 
-    public function testCanCreateStringFormatter()
+    public function provideType(): array
     {
-        $this->assertInstanceOf(FormatString::class, StaticFactory::factory('string'));
+        return [
+            ['number'],
+            ['string']
+        ];
     }
 
-    public function testExeption()
+
+    public function testException()
     {
         $this->expectException(Exception::class);
 
