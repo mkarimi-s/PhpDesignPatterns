@@ -14,6 +14,9 @@
         <testsuite name="Creational Suite">
             <directory>./tests/Creational</directory>
         </testsuite>
+        <testsuite name="Behavioral Suite">
+            <directory>./tests/Behavioral</directory>
+        </testsuite>
     </testsuites>
 
     <filter>
